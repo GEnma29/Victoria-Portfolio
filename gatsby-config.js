@@ -1,11 +1,23 @@
 module.exports = {
   siteMetadata: {
     siteUrl: "https://www.yourdomain.tld",
-    title: "Portfolio",
+    title: "Victoria Jimenez",
   },
   plugins: [
+    "@chakra-ui/gatsby-plugin",
     "gatsby-plugin-gatsby-cloud",
     "gatsby-plugin-image",
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Titan One`,
+          `Roboto`,
+          `source sans pro\:300,400,400i,700` // you can also specify font weights and styles
+        ],
+        display: 'swap'
+      }
+    },
     {
       resolve: "gatsby-plugin-google-analytics",
       options: {
