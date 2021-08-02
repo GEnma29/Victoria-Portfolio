@@ -10,16 +10,29 @@ import {
   Icon,
   Link,
 } from "@chakra-ui/react";
+import styled from "styled-components"
 import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin";
 import { FaInstagram } from "@react-icons/all-files/fa/FaInstagram";
 import { FaYoutube } from "@react-icons/all-files/fa/FaYoutube";
-import * as ListStyle from "./Aboutme.module.css";
+
+const ContainerUl = styled.div`
+  display: flex;
+  heigth:100%;
+  align-items: center;
+  justiffy-content: center;
+  margin-top: 8rem;
+
+  ul {
+    list-style: none;
+    li {
+      padding: 10px 0px;
+      :hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+`
 const Aboutme = () => {
-  useEffect(() => {
-    window.onscroll = function () {
-      window.scrollTo(0, 0);
-    };
-  });
   return (
     <Flex>
       {/** mobile version */}
@@ -46,8 +59,8 @@ const Aboutme = () => {
             minH="150vh"
             src={`../wave-haikei.svg`}
           />
-          <Flex mt={8} align="center" justifyContent="center" h="100%">
-            <ul className={ListStyle.redes}>
+          <ContainerUl mt={8} align="center" justifyContent="center" h="100%">
+            <ul>
               <li>
                 <Link href="https://chakra-ui.com" isExternal>
                   <Icon m={2} as={FaLinkedin} w={12} h={12} color="white" />
@@ -64,7 +77,7 @@ const Aboutme = () => {
                 </Link>
               </li>
             </ul>
-          </Flex>
+          </ContainerUl>
           <Image
             mt="20vh"
             objectFit="cover"
@@ -72,25 +85,25 @@ const Aboutme = () => {
           />
           <Flex
             align="center"
-            ml={16}
+            ml="5%"
             mt="25vh"
             w="2xl"
             p={8}
             flexDirection="column"
           >
-            <Heading size="xl" color="#1f1f20">Hola, Soy</Heading>
-            <Heading size="2xl" color="#00a2ff">Victoria Jimenez </Heading>
-            <Heading size="xl"color="#1f1f20">
+            <Heading size="xl" textAlign="justify" color="#1f1f20">Hola, Soy</Heading>
+            <Heading size="2xl" textAlign="justify" color="#00a2ff">Victoria Jiménez </Heading>
+            <Heading size="xl" textAlign="center" color="#1f1f20">
               junior Digital Marketing Specialist
             </Heading>
-            <Text fontWeight="semibold" textAlign="justify" mt={2}>
+            <Text fontWeight="semibold" textAlign="justify" mt={6} >
               Motivada por seguir aprendiendo de esta industria,siempre
               tratando de perfeccionar mis habilidades, mi mayor herramienta es
               la creatividad y disciplina para enfrentarme a los retos que se me
               presenten en mis proyectos.
             </Text>
 
-            <Flex w="100%" m={4} align="center" justifyContent="center">
+            <Flex w="100%" m={6} align="center" justifyContent="center">
               <Box
                 as="button"
                 height="2.7rem"
@@ -103,7 +116,10 @@ const Aboutme = () => {
                 fontWeight="semibold"
                 bg="#00a2ff"
                 color="#fff"
-                _hover={{ bg: "#40b9ff" }}
+                _hover={{ 
+                  bg: "#40b9ff" ,
+                  transform: "scale(1.2)"
+                }}
                 _active={{
                   bg: "#0082cc",
                   transform: "scale(0.98)",
@@ -114,13 +130,15 @@ const Aboutme = () => {
                     "0 0 1px 2px rgba(88, 144, 255, .75), 0 1px 1px rgba(0, 0, 0, .15)",
                 }}
               >
-                My Works
+                Mis Proyectos
               </Box>
               </Flex>
           </Flex>
         </Flex>
       </Flex>
     </Flex>
+
+
   );
 };
 

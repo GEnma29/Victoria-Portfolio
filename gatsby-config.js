@@ -4,6 +4,7 @@ module.exports = {
     title: "Victoria Jimenez",
   },
   plugins: [
+    "gatsby-plugin-styled-components",
     "@chakra-ui/gatsby-plugin",
     "gatsby-plugin-gatsby-cloud",
     "gatsby-plugin-image",

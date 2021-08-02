@@ -31,12 +31,12 @@ const Navbar = () => {
             </Link>
             <Link to="/Projects">
               <Button variant="ghost" mr={2}>
-                Projects
+                Proyectos
               </Button>
             </Link>
             <Link to="/contact">
               <Button variant="ghost" mr={2}>
-                Contact
+                Contacto
               </Button>
             </Link>
           </Flex>

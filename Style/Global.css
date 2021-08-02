@@ -2,6 +2,10 @@ html{
     margin: 0;
     padding: 0;
 }
+body{
+    overflow: hidden;
+}
+
 ::-webkit-scrollbar {
     display: none;
 }
